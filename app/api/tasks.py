@@ -5,6 +5,7 @@ from flask_restx import Resource
 
 from app import db
 from app.models import Tasks
+from app.api.authentication import token_required
 
 api = Namespace("tasks", description="Tasks related operations")
 
@@ -31,6 +32,7 @@ class TaskList(Resource):
     @api.doc("create_task")
     @api.expect(task)
     @api.marshal_with(task, code=201)
+    @token_required
     def post(self):
         """Create a new task"""
         task = Tasks(api.payload["text"])
@@ -58,6 +60,7 @@ class Task(Resource):
 
     @api.doc("delete_task")
     @api.response(200, "Task deleted")
+    @token_required
     def delete(self, id):
         """Delete a task given its identifier"""
         task = Tasks.query.filter_by(id=id).first()
@@ -70,6 +73,7 @@ class Task(Resource):
 
     @api.expect(task)
     @api.marshal_with(task)
+    @token_required
     def put(self, id):
         """Update a task given its identifier"""
         task = Tasks.query.filter_by(id=id).first()
