@@ -1,0 +1,12 @@
+# ignore all files except listed below
+*
+.*
+
+# we need these files inside a container
+!app/
+!migrations/
+!main.py
+!entrypoint.sh
+!requirements/
+!requirements.txt
+!settings.py
