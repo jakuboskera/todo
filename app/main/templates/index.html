@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TODO is a simple API with swagger documentation" />
+    <title>TODO</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/toggle-bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/toggle-bootstrap-dark.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/toggle-bootstrap-print.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+
+<body class="bootstrap">
+    <div class="dark-mode text-right mt-3 mb-5">
+        <span class="icon-sun"></span>
+        <label class="switch">
+            <input type="checkbox" onclick="SwapThemes();" id="toggle-dark-mode">
+            <span class="slider round"></span>
+        </label>
+        <span class="icon-moon-o mr-4"></span>
+
+        <span class="git-logo text-right mr-4"> <a href="https://github.com/jakuboskera/todo" target="_blank" rel="noopener noreferrer"><span class="fab fa-git-alt"></span
+            ></a></span>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center mb-5">
+            <h1 class="heading-section">
+                &#9745; TODO
+            </h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            {% if tasks | length > 0 %}
+            <ul class="list-group list-group-flush ">
+                {% for task in tasks %}
+                <li class="list-group-item">{{ task.text }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <h4 class="text-center">Nothing to do &#129303;</h4> {% endif %}
+        </div>
+    </div>
+    </div>
+    <footer class="fixed-bottom">
+        <div class="footer-copyright text-center py-3 bg-light">
+            <a href="/api/v1" class="nav-item nav-link">API v1</a> Made with <span style="color:#ec3935;">&#9829;</span> by
+            <a href="https://github.com/jakuboskera" target="_blank" rel="noopener noreferrer">@jakuboskera</a>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/jquery-3.5.1.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
