@@ -2,7 +2,7 @@
 .SHELL := /bin/bash
 .DEFAULT_GOAL := help
 
-.PHONY: pre-commit-install pre-commit-all run cleanup
+.PHONY: pre-commit-install pre-commit-all run clean
 
 help:
 	@echo "Available targets:"
@@ -17,7 +17,7 @@ pre-commit-all: ## Manually run all pre-commit hooks on a repository (all files)
 run: ## Starts app localy using docker-compose
 	docker-compose up -d
 
-cleanup: ## Delete app deployed by docker-compose
+clean: ## Delete app deployed by docker-compose
 	docker-compose down --rmi all -v
 
 # New targets here
