@@ -37,7 +37,7 @@
             {% if tasks | length > 0 %}
             <ul class="list-group list-group-flush ">
                 {% for task in tasks %}
-                <li class="list-group-item">{{ task.text }}</li>
+                <li class="list-group-item {% if task.is_done %}task-done{% endif %}">{{ task.text }}</li>
                 {% endfor %}
             </ul>
             {% else %}

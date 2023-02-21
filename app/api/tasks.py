@@ -14,6 +14,7 @@ task = api.model(
     {
         "id": fields.Integer(readonly=True, description="The task identifier"),
         "text": fields.String(required=True, description="The task details"),
+        "is_done": fields.Boolean(default=False, description="Deciding if the task is done")
     },
 )
 
@@ -79,7 +80,12 @@ class Task(Resource):
         task = Tasks.query.filter_by(id=id).first()
 
         if task is not None:
-            Tasks.query.filter_by(id=id).update(dict(text=api.payload["text"]))
+            data = {}
+            if w := api.payload.get("text", None) is not None:
+                data["text"] = w
+            if w := api.payload.get("is_done", None) is not None:
+                data["is_done"] = w
+            Tasks.query.filter_by(id=id).update(data)
             db.session.commit()
             return Task().get(id)
         api.abort(404)
