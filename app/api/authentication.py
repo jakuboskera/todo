@@ -1,6 +1,8 @@
-from functools import wraps
-from flask import request, abort
 import os
+from functools import wraps
+
+from flask import abort
+from flask import request
 
 
 def token_required(f):

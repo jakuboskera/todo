@@ -4,8 +4,8 @@ from flask_restx import Namespace
 from flask_restx import Resource
 
 from app import db
-from app.models import Tasks
 from app.api.authentication import token_required
+from app.models import Tasks
 
 api = Namespace("tasks", description="Tasks related operations")
 
