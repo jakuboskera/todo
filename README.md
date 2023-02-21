@@ -13,7 +13,7 @@ documentation. Purpose of this application is mainly to leverage it as
 a basic application which can be then mananaged with IaC/GitOps approach.
 
 Last release is always automatically deployed as live demo in
-[Heroku](http://heroku.com) 🚀:
+[Fly.io](https://fly.io) 🚀:
 
 <p align="center">
     <b>https://todo.jakuboskera.dev</b>
@@ -36,9 +36,9 @@ See
 - [📖 TOC](#-toc)
 - [🏁 Get started](#-get-started)
 - [🎉 Run in docker using docker-compose](#-run-in-docker-using-docker-compose)
-  - [⚠️ Prerequisites](#️-prerequisites)
-  - [🚀 Install](#-install)
-  - [🧹 Cleanup](#-cleanup)
+    - [⚠️ Prerequisites](#️-prerequisites)
+    - [🚀 Install](#-install)
+    - [🧹 Cleanup](#-cleanup)
 - [😎 Manage TODO application via Terraform provider](#-manage-todo-application-via-terraform-provider)
 - [Develop](#develop)
 
