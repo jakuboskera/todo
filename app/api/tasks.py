@@ -14,7 +14,9 @@ task = api.model(
     {
         "id": fields.Integer(readonly=True, description="The task identifier"),
         "text": fields.String(required=True, description="The task details"),
-        "is_done": fields.Boolean(default=False, description="Deciding if the task is done")
+        "is_done": fields.Boolean(
+            default=False, description="Deciding if the task is done"
+        ),
     },
 )
 
