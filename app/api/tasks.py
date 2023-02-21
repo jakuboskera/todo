@@ -83,10 +83,15 @@ class Task(Resource):
 
         if task is not None:
             data = {}
-            if w := api.payload.get("text", None) is not None:
-                data["text"] = w
-            if w := api.payload.get("is_done", None) is not None:
-                data["is_done"] = w
+
+            text = api.payload.get("text", None)
+            if text is not None:
+                data["text"] = text
+
+            is_done = api.payload.get("is_done", None)
+            if is_done is not None:
+                data["is_done"] = is_done
+
             Tasks.query.filter_by(id=id).update(data)
             db.session.commit()
             return Task().get(id)
