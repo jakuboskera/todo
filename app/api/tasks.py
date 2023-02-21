@@ -38,7 +38,7 @@ class TaskList(Resource):
     @token_required
     def post(self):
         """Create a new task"""
-        task = Tasks(api.payload["text"])
+        task = Tasks(api.payload["text"], api.payload["is_done"])
         db.session.add(task)
         db.session.commit()
         return task, 201, {"Location": "".join([request.url, str(task.id)])}

@@ -8,5 +8,6 @@ class Tasks(db.Model):
     text = db.Column(db.String(), nullable=False)
     is_done = db.Column(db.Boolean, unique=False, default=False)
 
-    def __init__(self, text):
+    def __init__(self, text, is_done):
         self.text = text
+        self.is_done = is_done
