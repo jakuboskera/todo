@@ -1,6 +1,6 @@
 <div align="center">
     <h1>&#9745; TODO</h1>
-    <a href="https://github.com/jakuboskera/todo/actions"><img alt="jakuboskera" src="https://img.shields.io/github/actions/workflow/status/jakuboskera/todo/release.yml?branch=main&logo=github"></a>
+    <a href="https://github.com/jakuboskera/todo/actions"><img alt="jakuboskera" src="https://img.shields.io/github/actions/workflow/status/jakuboskera/todo/release.yml?logo=github"></a>
     <a href="https://github.com/jakuboskera/todo/releases"><img alt="jakuboskera" src="https://img.shields.io/github/v/release/jakuboskera/todo?logo=docker"></a>
     <a href="https://hub.docker.com/repository/docker/jakuboskera/todo"><img alt="jakuboskera" src="https://img.shields.io/docker/pulls/jakuboskera/todo?logo=docker"></a>
     <a href="https://opensource.org/licenses/Apache-2.0"><img alt="jakuboskera" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"></a>
