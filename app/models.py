@@ -6,6 +6,7 @@ class Tasks(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(), nullable=False)
+    is_done = db.Column(db.Boolean, unique=False, default=False)
 
     def __init__(self, text):
         self.text = text
