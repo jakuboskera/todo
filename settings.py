@@ -7,6 +7,8 @@ class Config(object):
     PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SWAGGER_UI_DOC_EXPANSION = "list"
+    # pool_pre_ping should help handle DB connection drops
+    SQLALCHEMY_ENGINE_OPTIONS = {"pool_pre_ping": True}
 
 
 class ProductionConfig(Config):
