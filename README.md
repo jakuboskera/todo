@@ -101,7 +101,7 @@ So you can create/update/delete a TODO tasks using Terraform manifests.
       required_providers {
         todo = {
           source  = "jakuboskera/todo"
-          version = "0.1.0"
+          version = "0.2.0"
         }
       }
     }
@@ -113,6 +113,11 @@ So you can create/update/delete a TODO tasks using Terraform manifests.
 
     resource "todo_task" "coding" {
       text = "Create the best application ever"
+    }
+
+    resource "todo_task" "girlfriend" {
+      text    = "Find a kind and pretty girlfriend"
+      is_done = true
     }
     ```
 
