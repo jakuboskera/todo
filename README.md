@@ -88,11 +88,10 @@ There was created a
 for this application, which can be used for managing a TODO instance.
 So you can create/update/delete a TODO tasks using Terraform manifests.
 
-
 1. Run TODO application localy using
    [docker-compose](#-run-in-docker-using-docker-compose)
 1. Go to <http://localhost:5000> and check that there are no tasks created
-1. Create this terraform manifest
+1. Create this terraform manifest to create two tasks
 
     ```hcl
     # main.tf
@@ -127,15 +126,17 @@ So you can create/update/delete a TODO tasks using Terraform manifests.
     terraform init
     ```
 
-1. Create task in TODO application
+1. Create tasks in TODO application
 
     ```bash
     terraform apply -auto-approve
     ```
 
-1. Go to <http://localhost:5000> and check if task "Create the best
-   application ever" was created
-1. Now you can change a text of this task, add another tasks, etc.
+1. Go to <http://localhost:5000> and check if these tasks were created:
+    1. Create the best application ever
+    1. ~~Find a kind and pretty girlfriend~~
+1. Now you can change a text of this task, modify status, add another tasks,
+   etc.
 1. After that you can delete tasks by
 
     ```bash
