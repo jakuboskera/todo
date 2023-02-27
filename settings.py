@@ -42,6 +42,7 @@ class TestingConfig(Config):
     DEBUG = True
     TESTING = True
     SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
+    os.environ["API_KEY"] = "12345678"
 
 
 class DevelopmentConfig(Config):
