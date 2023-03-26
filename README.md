@@ -75,6 +75,16 @@ See
 make run
 ```
 
+Application is by default accessible on <http://localhost:5000>.
+
+The application needs environment variable `API_KEY` with some secret.
+This secret is then used for securing API endpoints for adding, updating
+or deleting tasks. By default the secret is `12345678` (configured in
+[.env](.env) file). So requests for interacting with these endpoints
+need to have HTTP header `X-API-KEY` with value which is equal to
+the environment variable `API_KEY`, otherwise the HTTP error code 401
+is returned to the client.
+
 ### 🧹 Cleanup
 
 ```bash
