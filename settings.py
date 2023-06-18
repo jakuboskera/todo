@@ -54,8 +54,16 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = "sqlite:///{0}".format(DB_PATH)
 
 
+class WithoutPersistentDatabaseConfig(Config):
+    """Development configuration"""
+
+    DB_NAME = "dev.db"
+    DB_PATH = os.path.join(Config.PROJECT_ROOT, DB_NAME)
+    SQLALCHEMY_DATABASE_URI = "sqlite:///{0}".format(DB_PATH)
+
 config_dict = {
     "dev": DevelopmentConfig,
     "test": TestingConfig,
+    "without_persistent_database": WithoutPersistentDatabaseConfig,
     "prod": ProductionConfig,
 }
