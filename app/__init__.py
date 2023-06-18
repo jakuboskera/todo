@@ -16,6 +16,6 @@ def create_app(config=config_dict["dev"]):
     from app.api import blueprint as api
 
     app.register_blueprint(main)
-    app.register_blueprint(api)
+    app.register_blueprint(api, url_prefix="/api/v1")
 
     return app

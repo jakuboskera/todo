@@ -3,7 +3,7 @@ from flask_restx import Api
 
 from app.api.tasks import api as tasks
 
-blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
+blueprint = Blueprint("api", __name__)
 
 authorizations = {"apikey": {"type": "apiKey", "in": "header", "name": "X-API-KEY"}}
 
