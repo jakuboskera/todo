@@ -9,6 +9,7 @@ db = SQLAlchemy()
 def create_app(config=config_dict["dev"]):
     app = Flask(__name__)
     app.config.from_object(config)
+    app.url_map.strict_slashes = False
 
     db.init_app(app)
 
