@@ -1,6 +1,6 @@
-import os
 from functools import wraps
 
+from flask import current_app
 from flask import abort
 from flask import request
 
@@ -17,7 +17,7 @@ def token_required(f):
                 "data": None,
                 "error": "Unauthorized",
             }, 401
-        if token != os.environ.get("API_KEY", ""):
+        if token != current_app.config.get("API_KEY"):
             abort(403)
         return f(*args, **kwargs)
 

@@ -9,6 +9,7 @@ class Config(object):
     SWAGGER_UI_DOC_EXPANSION = "list"
     # pool_pre_ping should help handle DB connection drops
     SQLALCHEMY_ENGINE_OPTIONS = {"pool_pre_ping": True}
+    API_KEY = os.environ.get("API_KEY")
 
 
 class ProductionConfig(Config):
@@ -42,7 +43,7 @@ class TestingConfig(Config):
     DEBUG = True
     TESTING = True
     SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
-    os.environ["API_KEY"] = "12345678"
+    API_KEY = "12345678"
 
 
 class DevelopmentConfig(Config):
@@ -60,6 +61,7 @@ class WithoutPersistentDatabaseConfig(Config):
     DB_NAME = "dev.db"
     DB_PATH = os.path.join(Config.PROJECT_ROOT, DB_NAME)
     SQLALCHEMY_DATABASE_URI = "sqlite:///{0}".format(DB_PATH)
+
 
 config_dict = {
     "dev": DevelopmentConfig,
