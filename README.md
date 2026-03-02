@@ -39,6 +39,8 @@ See
     - [⚠️ Prerequisites](#️-prerequisites)
     - [🚀 Install](#-install)
     - [🧹 Cleanup](#-cleanup)
+- [☸️ Deploy to Kubernetes using Helm chart](#️-deploy-to-kubernetes-using-helm-chart)
+- [🤖 Manage TODO application via todo-operator](#-manage-todo-application-via-todo-operator)
 - [😎 Manage TODO application via Terraform provider](#-manage-todo-application-via-terraform-provider)
 - [Develop](#develop)
 
@@ -90,6 +92,36 @@ is returned to the client.
 ```bash
 make clean
 ```
+
+## ☸️ Deploy to Kubernetes using Helm chart
+
+The TODO application can be deployed to a Kubernetes cluster using the
+[todo Helm chart](https://github.com/jakuboskera/charts/tree/main/charts/todo).
+
+```bash
+helm repo add jakuboskera https://jakuboskera.github.io/charts
+helm repo update
+helm install my-todo jakuboskera/todo
+```
+
+For full configuration reference see the
+[chart documentation](https://github.com/jakuboskera/charts/tree/main/charts/todo).
+
+## 🤖 Manage TODO application via todo-operator
+
+The TODO application can also be configured through the
+[todo-operator](https://github.com/jakuboskera/charts/tree/main/charts/todo-operator),
+a Kubernetes operator that allows you to manage TODO tasks declaratively via
+custom resources (`TodoEndpoint` and `Task`).
+
+```bash
+helm repo add jakuboskera https://jakuboskera.github.io/charts
+helm repo update
+helm install my-todo-operator jakuboskera/todo-operator
+```
+
+For full usage and configuration reference see the
+[todo-operator chart documentation](https://github.com/jakuboskera/charts/tree/main/charts/todo-operator).
 
 ## 😎 Manage TODO application via Terraform provider
 
